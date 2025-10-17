@@ -9,11 +9,13 @@ export default function Data() {
   const [data, setData] = useState([])
   const user_storage: any = localStorage.getItem('user') 
   const user = user_storage ? JSON.parse(user_storage) : null
+  const token = localStorage.getItem('token')
+
 
 
 
   const getDataBarang = () => {
-    axios.get(import.meta.env.VITE_API + '/barang').then(res => {
+    axios.get(import.meta.env.VITE_API + '/barang', {headers: {authorization:token}}).then(res => {
       setDataBarang(res.data)
     })
   }
@@ -22,7 +24,8 @@ export default function Data() {
     axios.get(import.meta.env.VITE_API + '/peminjaman', {
       params: {
         NIM: user ? user.Username : '-'
-      }
+      }, 
+      headers: {authorization:token}
     }).then(res => {
       setData(res.data)
     })
@@ -31,7 +34,7 @@ export default function Data() {
 
   const postData = async (data: any) => {
     // console.log(data)
-    await axios.post(import.meta.env.VITE_API + '/peminjaman', {...data, NIM: user.Username, Status: 1})
+    await axios.post(import.meta.env.VITE_API + '/peminjaman', {...data, NIM: user.Username, Status: 1}, {headers: {authorization:token}})
     Swal.fire({
       icon: "success",
       title: "Inputted!",
