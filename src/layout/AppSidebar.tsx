@@ -43,7 +43,7 @@ const navItems: any[] = [
   {
     icon: <CalenderIcon />,
     name: "Peminjaman",
-    path: "/peminjaman",
+    path: "/",
     role: 2
   },
   // {

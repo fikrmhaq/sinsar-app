@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import {  EyeCloseIcon, EyeIcon } from "../../icons";
+import { EyeCloseIcon, EyeIcon } from "../../icons";
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
 // import Checkbox from "../form/input/Checkbox";
@@ -34,11 +34,8 @@ export default function SignInForm() {
         showConfirmButton: false,
       });
 
-      if (res.data.user.Role === 2) {
-        navigate('/peminjaman')
-      } else {
-        navigate("/"); // redirect to dashboard/home
-      }
+      navigate("/"); // redirect to dashboard/home
+
     } catch (err) {
       Swal.fire({
         icon: "error",

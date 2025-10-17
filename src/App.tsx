@@ -21,16 +21,13 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route element={<ProtectedRoute />}>
             <Route element={<AppLayout />}>
+              <Route index path="/" element={<Home />} />
               <Route element={<RoleBasedRoute allowedRoles={[1]} />}>
-                <Route index path="/" element={<Home />} />
                 <Route path="/barang" element={<Data />} />
                 <Route path="/permohonan" element={<Permohonan />} />
               </Route>
 
 
-              <Route element={<RoleBasedRoute allowedRoles={[2]} />}>
-                <Route path="/peminjaman" element={<Peminjaman />} />
-              </Route>
 
             </Route>
           </Route>

@@ -2,10 +2,20 @@ import EcommerceMetrics from "../../components/ecommerce/EcommerceMetrics";
 import MonthlySalesChart from "../../components/ecommerce/MonthlySalesChart";
 import RecentOrders from "../../components/ecommerce/RecentOrders";
 import PageMeta from "../../components/common/PageMeta";
+import Peminjaman from "./../Mahasiswa/Peminjaman";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default () => {
+  const user_storage = localStorage.getItem('user')
+  const user = user_storage ? JSON.parse(user_storage) : null
+
+  if(user === null) return null
+  if(user.Role === 1) return <Admin/>
+  return <Peminjaman/> 
+}
+
+function Admin() {
   const [barang, setBarang] = useState([])
   const [peminjaman, setPeminjaman] = useState([])
   const [chartData, setChartData] = useState([
