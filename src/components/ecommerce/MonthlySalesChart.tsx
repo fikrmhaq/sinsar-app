@@ -85,12 +85,7 @@ export default function MonthlySalesChart(props: any) {
       },
     },
   };
-  const series = [
-    {
-      name: "Sales",
-      data: [168, 385, 201, 298, 187, 195, 291, 110, 215, 390, 280, 112],
-    },
-  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleDropdown() {

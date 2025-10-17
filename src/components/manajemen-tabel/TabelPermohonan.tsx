@@ -5,12 +5,6 @@ import {
     TableHeader,
     TableRow,
 } from "../ui/table";
-import Badge from "../ui/badge/Badge";
-import ModalTambahPeminjaman from "./ModalTambahPeminjaman"
-import ModalEditBarang from "./ModalEditBarang"
-import { useState } from "react";
-import TableActions from "./Icons/TableActions"
-import StatusCell from "./subcomponents/ConfirmationBadge";
 import { IconButton, Tooltip } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import Swal from "sweetalert2";
@@ -21,9 +15,9 @@ import { findMatchingRecords } from "../../function";
 // Define the table data using the interface
 
 export default function RecentOrders(props: any) {
-    const [open, setOpen] = useState(false)
-    const [editOpen, setEditOpen] = useState(false)
-    const [val, setVal] = useState(null)
+    // const [open, setOpen] = useState(false)
+    // const [editOpen, setEditOpen] = useState(false)
+    // const [val, setVal] = useState(null)
     const app: any = useApp()
 
 

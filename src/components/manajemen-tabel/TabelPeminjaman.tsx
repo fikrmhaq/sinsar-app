@@ -5,11 +5,11 @@ import {
     TableHeader,
     TableRow,
 } from "../ui/table";
-import Badge from "../ui/badge/Badge";
+// import Badge from "../ui/badge/Badge";
 import ModalTambahPeminjaman from "./ModalTambahPeminjaman"
-import ModalEditBarang from "./ModalEditBarang"
+// import ModalEditBarang from "./ModalEditBarang"
 import { useState } from "react";
-import TableActions from "./Icons/TableActions"
+// import TableActions from "./Icons/TableActions"
 import StatusCell from "./subcomponents/ConfirmationBadge";
 import { findMatchingRecords } from "../../function";
 import { useApp } from "../../layout/AppLayout";
@@ -18,8 +18,8 @@ import { useApp } from "../../layout/AppLayout";
 
 export default function RecentOrders(props: any) {
     const [open, setOpen] = useState(false)
-    const [editOpen, setEditOpen] = useState(false)
-    const [val, setVal] = useState(null)
+    // const [editOpen, setEditOpen] = useState(false)
+    // const [val, setVal] = useState(null)
       const app: any = useApp()
     
 
@@ -120,7 +120,7 @@ export default function RecentOrders(props: any) {
                 </Table>
             </div>
             <ModalTambahPeminjaman data_barang={props.barang} data_peminjaman={props.data} open={open} onClose={() => setOpen(false)} onSubmit={props.onTambah} />
-            <ModalEditBarang open={editOpen} onClose={() => setEditOpen(false)} onSubmit={(params: any) => props.onEdit(val, params)} />
+            {/* <ModalEditBarang open={editOpen} onClose={() => setEditOpen(false)} onSubmit={(params: any) => props.onEdit(val, params)} /> */}
 
         </div>
     );

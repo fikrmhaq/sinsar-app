@@ -43,7 +43,7 @@ export default function BarangDialog(props: any) {
             props.data_barang.filter((el: any) => el.Status === 'Tersedia')
             .filter((el: any) => !props.data_peminjaman.filter((x: any) => x.Status === 1).map((x: any) => x.Id_Barang).includes(el.id))
             // .filter((el: any) => !props.data_peminjaman.filter((x: any) => x.Status !== 2).map((x: any) => x.Id_Barang).includes(el.id))
-            .map((el: any, i: any) => {
+            .map((el: any) => {
               return <MenuItem value={el.id}>{el.Nama_Barang}</MenuItem>
             })
           }

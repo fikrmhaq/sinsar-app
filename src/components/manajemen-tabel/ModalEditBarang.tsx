@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 export default function BarangDialog(props: any) {
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
   const [form, setForm] = React.useState({
     Status: "Tersedia"
   });
@@ -45,7 +45,7 @@ export default function BarangDialog(props: any) {
         </DialogContent>
 
         <DialogActions>
-          <Button onClick={() => setOpen(false)}>Batal</Button>
+          <Button onClick={() => props.onClose()}>Batal</Button>
           <Button variant="contained" onClick={handleSubmit}>
             Simpan
           </Button>
