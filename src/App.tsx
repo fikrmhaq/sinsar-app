@@ -7,7 +7,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import Data from "./pages/Admin/Data";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Peminjaman from "./pages/Mahasiswa/Peminjaman";
+// import Peminjaman from "./pages/Mahasiswa/Peminjaman";
 import Permohonan from "./pages/Admin/Permohonan";
 import RoleBasedRoute from "./components/RoleBasedRoute";
 
